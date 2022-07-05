@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        #kare{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    
+    <input type="text" name="" id="renk" placeholder="renk">
+    <input type="text" name="" id="gen" placeholder="genişlik">
+    <input type="text" name="" id="yuk" placeholder="yükseklik">
+
+    <div id="kare" style="border: 2px solid black; width: 100px; height: 100px;"></div>
+     
+
+    <script src="jquery-3.6.0.min.js">
+        
+    </script>
+    <script>
+        // keyup klavyeden basılan tuşun bırakılmasıyla aktif olan fonksiyon
+        $("#renk").keyup(function(){
+        renk = $("#renk").val();
+        $("div").css("background-color" ,renk);
+
+        });
+
+            // keyup sayesınde genişligini ayarlıyoruz 
+        $("#gen").keyup(function(){
+        gen = $("#gen").val();
+        $("div").animate({width: gen});
+
+        });
+
+        // keyup sayesınde yuksekligini ayarlıyoruz 
+        $("#yuk").keyup(function(){
+        yuk = $("#yuk").val();
+        $("div").animate({height: yuk + "px"});
+            // inputa girdigimiz degeri keyupluyoruz ve sonra yuk degerine atıyoruz en son height: yuk yazarak yuke gelen deger heightımızın yukseklıgı oluyor 
+        });
+    </script>
+</body>
+</html>
